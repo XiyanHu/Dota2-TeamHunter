@@ -17,6 +17,6 @@ If you found a bug, please create an issue here on GitHub.
 ## API
 [OpenDota API](https://api.opendota.com/api)
 ## Changelog
-View [Changelog]() Here.
+View [Changelog](https://github.com/XiyanHu/Dota2-TeamHunter/blob/master/CHANGELOG.md) Here.
 ## Special Thanks to 
 Tianlun "Henry" Chen , Xie Tao
