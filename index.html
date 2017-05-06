@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link href="css/bootstrap.css" rel="stylesheet">   
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/jquery-editable-select.min.css" rel="stylesheet">
+</head>
+<body>	
+	<div id ="whole"></div>   
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab1" data-toggle="tab">Recent Results</a></li>
+        <li><a href="#tab2" data-toggle="tab">Team Info</a></li>
+        <li><a id = "refresh"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
+        <li><a id = "aboutMe" href="#tab3" data-toggle="tab"><i class="fa fa-desktop" aria-hidden="true"></i>   About</a></li>  
+      </ul>    
+      <div class="tab-content"> 
+        <div class="tab-pane active" id="tab1">
+          <div class="sk-wave" id="loading">
+            <div class="sk-rect sk-rect1"></div>
+            <div class="sk-rect sk-rect2"></div>
+            <div class="sk-rect sk-rect3"></div>
+            <div class="sk-rect sk-rect4"></div>
+            <div class="sk-rect sk-rect5"></div>
+          </div>
+          <table class="table table-hover table-condensed" id="main_table"></table>
+        </div>
+      <div class="tab-pane" id="tab2">
+      <div class="col-md-6">
+        <h2></h2>
+        <p><select id="selectTeam" class="form-control" placeholder="search your team"></select></p>
+      </div>      
+          <div>    
+              <div class="sk-wave" id="loadingTeamInfo">
+                      <div class="sk-rect sk-rect1"></div>
+                      <div class="sk-rect sk-rect2"></div>
+                      <div class="sk-rect sk-rect3"></div>
+                      <div class="sk-rect sk-rect4"></div>
+                      <div class="sk-rect sk-rect5"></div>
+              </div>
+            <div class="col-md-6">
+              <table id="team_member"></table>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane" id="tab3">
+    <div id ="aboutMeArea">
+      <div id = "aboutTitleArea"><p><img src="images/icon48.png"><span id="aboutTitle">    Dota2 TeamHunter    </span> <span id="versionNum">Version 1.0.2</span></p></div>
+          <table class="table table-condensed">
+             <tbody>
+                <tr>
+                  <td class="aboutCellHead">Developed by</td>
+                  <td>Xiyan Hu</td>
+                </tr>
+                <tr>
+                  <td class="aboutCellHead">Contact</td>
+                  <td><a href="huxiyan927@gmail.com">huxiyan927@gmail.com</a></td>
+                </tr>
+                <tr>  
+                  <td class="aboutCellHead">Version</td>
+                  <td>1.0.2    <a href="https://api.opendota.com/api" target="_blank">View changelog</a></td>
+                </tr>
+                <tr>  
+                  <td class="aboutCellHead">Data Source</td>
+                  <td><a href="https://api.opendota.com/api" target="_blank">api.opendota.com/api</a>
+                  </td>
+                </tr>
+                <tr>  
+                  <td class="aboutCellHead">Thanks to</td>
+                  <td>Tianlun (Henry) Chen,Tao Xie</td>
+                </tr>
+                <tr>  
+                  <td class="aboutCellHead">Contribute</td>
+                  <td><a href="www.google.com" target="_blank">Star At Github</a></td>
+                </tr>
+              </tbody> 
+          </table>
+          </div>
+    </div>
+      </div>
+  <script src="js/vendor/jquery-3.2.1.min.js"></script>
+  <script src="js/getdata.js"></script>
+  <script src="js/transdata.js"></script>
+  <script src="js/jquery.select.js"></script>
+  <script src="js/vendor/bootstrap.js"></script>
+  <script src="js/vendor/jquery-editable-select.min.js"></script>
+</body>
+</html>
