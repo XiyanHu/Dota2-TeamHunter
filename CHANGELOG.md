@@ -1,4 +1,8 @@
-# Change Logs
+## Change Logs
+### 1.0.3 - 05/07/2017
+
+- Fix some keyboard bugs
+
 ### 1.0.2 - 05/06/2017
 
 - Update About
