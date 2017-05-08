@@ -2,7 +2,7 @@
 Dota2 TeamHunter Chrome Extension
 ## Installation
 You may install the extension from [Chrome Web Store](https://chrome.google.com/webstore/detail/dota2-teamhunter/gegfoghhgdpcgfbmambjkgmmghgdedmc),
-<br>or you can download the release version [here](https://pan.baidu.com/s/1jIuoW4I), drag and drop the .crx file into Google chrome browser.
+<br>or you can download the release version [here](https://pan.baidu.com/s/1dFJ1YO5), drag and drop the .crx file into Google chrome browser.
 ## Features
 * Follow your favourite Dota2 team
 * Check recent game results and details 
