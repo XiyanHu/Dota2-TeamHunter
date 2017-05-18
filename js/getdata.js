@@ -7,6 +7,8 @@ if (localStorage["testfield"]){
 		$("#loading").css('display','none');
 		$("#loadingTeamInfo").css('display','none');  
 	}
+setInterval(showMe,30*6*1000,localStorage["testfield"],localStorage["select_team_name"]);
+
 function showMe(team_id,team_name){	
 	var test_team_id = team_id;
 	function httpRequest(url, callback){
@@ -67,7 +69,13 @@ function showMe(team_id,team_name){
 	    	document.getElementById("main_table").innerHTML = "<h4>Ooops!It seems your team didn't have games recently.</h4>"
 	    }
 	var tableCode = '';
-	$("#loading").css('display','none'); 
+	$("#loading").css('display','none');
+	if (localStorage["firstMatchId"] != r.rows[0].match_id){
+		chrome.browserAction.setIcon({path: {'16': 'images/icon16_notify.png'}});
+	}else {
+		chrome.browserAction.setIcon({path: {'16': 'images/icon16.png'}});
+	}
+	localStorage["firstMatchId"] = r.rows[0].match_id;
 	for (var i=0;i<len1;i++){
 		if (i>=1){
 			if(r.rows[i].match_id==r.rows[i-1].match_id){

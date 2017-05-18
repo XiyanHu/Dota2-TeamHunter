@@ -1,7 +1,8 @@
 {
     "manifest_version": 2,
     "name": "Dota2 TeamHunter",
-    "version": "1.0.3",
+    "update_url": "https://clients2.google.com/service/update2/crx",
+    "version": "1.0.5",
     "description": "Focus on your favourite Dota2 team.Get team info and recent match results.",
     "icons": {
         "128": "images/icon128.png",
@@ -9,7 +10,8 @@
         "16": "images/icon16.png"
     },
     "background": {
-      "page": "index.html"
+      "page": "index.html",
+      "persistent":true
     },
     "browser_action": {
         "default_icon": {
