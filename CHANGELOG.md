@@ -1,4 +1,8 @@
 ## Change Logs
+### 1.0.6 - 05/21/2017
+
+- Fix some bugs.
+
 ### 1.0.5 - 05/18/2017
 
 - Add new feature:notifications. If there is some new game results, there will be a red dot on the bottom right corner of the icon to notify the user.
