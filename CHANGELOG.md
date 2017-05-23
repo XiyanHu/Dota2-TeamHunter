@@ -1,4 +1,8 @@
 ## Change Logs
+### 1.0.7 - 05/23/2017
+
+- Fix some bugs. Add error message.
+
 ### 1.0.6 - 05/21/2017
 
 - Fix some bugs.
