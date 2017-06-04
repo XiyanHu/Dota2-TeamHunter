@@ -1,4 +1,8 @@
 ## Change Logs
+### 1.0.8 - 06/03/2017
+
+- Fix time display bugs.
+
 ### 1.0.7 - 05/23/2017
 
 - Fix some bugs. Add error message.
