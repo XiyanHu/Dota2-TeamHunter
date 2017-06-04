@@ -8,7 +8,6 @@ if (localStorage["testfield"]){
 		$("#loadingTeamInfo").css('display','none');  
 	}
 setInterval(showMe,30*6*1000,localStorage["testfield"],localStorage["select_team_name"]);
-
 function showMe(team_id,team_name){	
 	var test_team_id = team_id;
 	function httpRequest(url, callback){
@@ -16,8 +15,12 @@ function showMe(team_id,team_name){
 	    xhr.open("GET", url, true);
 	    xhr.onreadystatechange = function() {
 	        if (xhr.readyState == 4) {
-	            callback(xhr.response);
-	        }
+	        	if (xhr.status == 200){
+	        		callback(xhr.response);	
+	        	}else{
+	        		document.getElementById("main_table").innerHTML = "<h4>Ooops! Maybe there is something wrong with API. Wait a minute and try again.</h4>"
+	        	}        
+	        } 
 	    }
 	    xhr.send();
 	}
@@ -100,11 +103,13 @@ function showMe(team_id,team_name){
 		startdate.setTime(starttime * 1000);
 		var mainTable = document.getElementById('main_table');
 		var match_detail_url = 'https://www.opendota.com/matches/'+r.rows[i].match_id;
+		var startdateCut = startdate.toLocaleString('en-US',{hour12:false});
+		startdateCut = startdateCut.substring(0,startdateCut.lastIndexOf(':'));
 		if (r.rows[i].win==true){
-			tableCode = tableCode + '<tr class="success" ><td>'+startdate.toLocaleString('en-US',{hour12:false}).substring(0,16)+'</td><td>'+r.rows[i].leaguename+'</td><td>'+rteam+' VS '+dteam+'</td><td> WIN </td><td><a href="'+match_detail_url+'" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td></tr>';
+			tableCode = tableCode + '<tr class="success" ><td>'+startdateCut+'</td><td>'+r.rows[i].leaguename+'</td><td>'+rteam+' VS '+dteam+'</td><td> WIN </td><td><a href="'+match_detail_url+'" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td></tr>';
 		} 
 		else {
-			tableCode = tableCode + '<tr class="danger" ><td>'+startdate.toLocaleString('en-US',{hour12:false}).substring(0,16)+'</td><td>'+r.rows[i].leaguename+'</td><td>'+rteam+' VS '+dteam+'</td><td> LOSE </td><td><a href="'+match_detail_url+'" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a></tr>';	
+			tableCode = tableCode + '<tr class="danger" ><td>'+startdateCut+'</td><td>'+r.rows[i].leaguename+'</td><td>'+rteam+' VS '+dteam+'</td><td> LOSE </td><td><a href="'+match_detail_url+'" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a></tr>';	
 		}
 	}
 	mainTable.innerHTML = tableCode;
