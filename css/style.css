@@ -40,6 +40,8 @@ body{
 
 #main_table{
 	font-size: 13.5px;
+  padding: 0;
+  margin: 0;
 }
 
 #inputTeamName{
