@@ -1,4 +1,8 @@
 ## Change Logs
+### 1.0.9 - 06/03/2017
+
+- Remove the annoying blank at the bottom of table.
+
 ### 1.0.8 - 06/03/2017
 
 - Fix time display bugs.
