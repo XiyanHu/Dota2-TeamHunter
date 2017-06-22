@@ -1,5 +1,6 @@
 //If there is value in localstorage, draw the match tabel
 if (localStorage["testfield"]){
+	console.log(localStorage["testfield"])
 		showMe(localStorage["testfield"],localStorage["select_team_name"]);
 	}
 	else{
@@ -59,9 +60,9 @@ function showMe(team_id,team_name){
 	var tableCode = '';
 	$("#loading").css('display','none');
 	if (localStorage["firstMatchId"] != r.rows[0].match_id){
-		chrome.browserAction.setIcon({path: {'16': 'images/icon16_notify.png'}});
+		//chrome.browserAction.setIcon({path: {'16': 'images/icon16_notify.png'}});
 	}else {
-		chrome.browserAction.setIcon({path: {'16': 'images/icon16.png'}});
+		//chrome.browserAction.setIcon({path: {'16': 'images/icon16.png'}});
 	}
 	localStorage["firstMatchId"] = r.rows[0].match_id;
 	for (var i=0;i<len1;i++){
@@ -89,4 +90,4 @@ function showMe(team_id,team_name){
 			tableCode = tableCode + '<tr class="success" ><td>'+startdateCut+'</td><td>'+r.rows[i].leaguename+'</td><td>'+rteam+' VS '+dteam+'</td><td> WIN </td><td><a href="'+match_detail_url+'" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td></tr>';} 
 		else {
 			tableCode = tableCode + '<tr class="danger" ><td>'+startdateCut+'</td><td>'+r.rows[i].leaguename+'</td><td>'+rteam+' VS '+dteam+'</td><td> LOSE </td><td><a href="'+match_detail_url+'" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a></tr>';	}}
-	mainTable.innerHTML = tableCode;});	}
+	if(tableCode) mainTable.innerHTML = tableCode; else document.getElementById("main_table").innerHTML = "<h4>Ooops!It seems your team didn't have games recently.</h4>"});	}
