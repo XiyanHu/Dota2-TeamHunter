@@ -1,4 +1,8 @@
 ## Change Logs
+### 1.1.0 - 06/21/2017
+
+- Fix some bugs.
+
 ### 1.0.9 - 06/07/2017
 
 - Remove the annoying blank at the bottom of table.
