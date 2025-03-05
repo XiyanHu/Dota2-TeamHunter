@@ -1,4 +1,8 @@
 ## Change Logs
+### 1.2.0 - 03/04/2024
+
+- Upgrade to manifest v3.
+
 ### 1.1.0 - 06/21/2017
 
 - Fix some bugs.

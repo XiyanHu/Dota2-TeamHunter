@@ -13,8 +13,8 @@
       <ul class="nav nav-tabs">
         <li class="active"><a href="#tab1" data-toggle="tab">Recent Results</a></li>
         <li><a href="#tab2" data-toggle="tab">Team Info</a></li>
-        <li><a id = "refresh"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
-        <li><a id = "aboutMe" href="#tab3" data-toggle="tab"><i class="fa fa-desktop" aria-hidden="true"></i>   About</a></li>  
+        <li><a id="refresh"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
+        <li><a id="aboutMe" href="#tab3" data-toggle="tab"><i class="fa fa-desktop" aria-hidden="true"></i>   About</a></li>  
       </ul>    
       <div class="tab-content" id="wholeTable"> 
         <div class="tab-pane active" id="tab1">
@@ -47,7 +47,7 @@
     </div>
     <div class="tab-pane" id="tab3">
     <div id ="aboutMeArea">
-      <div id = "aboutTitleArea"><p><img src="images/icon48.png"><span id="aboutTitle">    Dota2 TeamHunter    </span> <span id="versionNum">Version 1.1.0</span></p></div>
+      <div id = "aboutTitleArea"><p><img src="images/icon48.png"><span id="aboutTitle">    Dota2 TeamHunter    </span> <span id="versionNum">Version 1.2.0</span></p></div>
           <table class="table table-condensed">
              <tbody>
                 <tr>
@@ -60,7 +60,7 @@
                 </tr>
                 <tr>  
                   <td class="aboutCellHead">Version</td>
-                  <td>1.1.0    <a href="https://github.com/XiyanHu/Dota2-TeamHunter/blob/master/CHANGELOG.md" target="_blank">View changelog</a></td>
+                  <td>1.2.0    <a href="https://github.com/XiyanHu/Dota2-TeamHunter/blob/master/CHANGELOG.md" target="_blank">View changelog</a></td>
                 </tr>
                 <tr>  
                   <td class="aboutCellHead">Data Source</td>
@@ -86,5 +86,31 @@
   <script src="js/jquery.select.js"></script>
   <script src="js/vendor/bootstrap.js"></script>
   <script src="js/vendor/jquery-editable-select.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        var target = $(e.target).attr("href"); // activated tab
+        if (target === "#tab1") {
+          $('#loading').css('display', 'block');
+          $('#main_table').css('display', 'none');
+          showMe(localStorage["testfield"], localStorage["select_team_name"]);
+        }
+      });
+
+      $('#refresh').on('click', function() {
+        $('#loading').css('display', 'block');
+        $('#main_table').css('display', 'none');
+        showMe(localStorage["testfield"], localStorage["select_team_name"]);
+      });
+
+      $('#selectTeam').on('change', function() {
+        var selectedTeam = $(this).val();
+        localStorage["testfield"] = selectedTeam;
+        localStorage["select_team_name"] = $("#selectTeam option:selected").text();
+        $('#loadingTeamInfo').css('display', 'block');
+        showMe(selectedTeam, localStorage["select_team_name"]);
+      });
+    });
+  </script>
 </body>
 </html>
